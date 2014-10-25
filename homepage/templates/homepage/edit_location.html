@@ -1,0 +1,63 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/style.css' %}" /> 
+ 
+<head>
+<title>ITILITY</title>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+<div class="header-color-block">
+        
+    <a href="/homepage/"><img src="{% static 'homepage/images/ITILITY_LOGO.png' %}" /></a>
+    <br><br>
+    
+    <div class="header-menu-div">
+
+            &nbsp<a href="/homepage/"><img src="{% static 'homepage/images/ITILITY_LOGO_ARROW.png' %}" style="vertical-align:bottom; float:left" /></a>
+            <span class="header-menu-text">
+                <br><br><br><br>
+                <a class="header-menu-link" href="/homepage/assets">Assets</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="/homepage/locations">Locations</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="/homepage/manufacturers">Manufacturers</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="#">Admin</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="#">Contact Us</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+            </span>
+
+    </div>
+</div>
+ 
+<div class="main-half-div">
+<!-- HEADER --> 
+ 
+ 
+
+
+    <br><br>
+    <h1>Edit Location:</h1>
+
+  
+    <br>
+    <form method="POST">
+        <table>
+            <tbody>
+                {{ form }}
+            </tbody>
+        </table>
+        
+        <input type="submit" class = "btn btn-info" value="Save" />
+        <a class="btn btn-info" href="/homepage/locations">Cancel</a>
+    </form>
+
+
+    
+
+<!-- FOOTER (CLOSES DIV FROM ABOVE -->
+</div>    

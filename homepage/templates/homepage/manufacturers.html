@@ -1,0 +1,79 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/style.css' %}" /> 
+ 
+<head>
+<title>ITILITY</title>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+<div class="header-color-block">
+        
+    <a href="/homepage/"><img src="{% static 'homepage/images/ITILITY_LOGO.png' %}" /></a>
+    <br><br>
+    
+    <div class="header-menu-div">
+
+            &nbsp<a href="/homepage/"><img src="{% static 'homepage/images/ITILITY_LOGO_ARROW.png' %}" style="vertical-align:bottom; float:left" /></a>
+            <span class="header-menu-text">
+                <br><br><br><br>
+                <a class="header-menu-link" href="/homepage/assets">Assets</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="/homepage/locations">Locations</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="/homepage/manufacturers">Manufacturers</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="#">Admin</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="#">Contact Us</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+            </span>
+
+    </div>
+</div>
+ 
+<div class="main-half-div">
+<!-- HEADER --> 
+
+
+
+    <div class="main-text">
+        <h2>Manufacturers
+            <div class="float-right">
+                <a href="/homepage/new_manufacturer">New Manufacturer</a>
+            </div>
+        </h2>
+        
+
+        <table>
+            <thead>
+                <tr>
+                    <th>UID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                {% for m in manufacturers %}
+                    <tr>
+                        <td>{{ m.UID }}</td>
+                        <td>{{ m.name }}</td>
+                        <td>{{ m.address }}</td>
+                        <td>{{ m.phone }}</td>
+                        <td><a href="/homepage/edit_manufacturer/{{ m.UID }}">Edit</a></td>
+                        <td><a href="/homepage/delete_manufacturer/{{ m.UID }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        
+    </div>
+
+
+<!-- FOOTER (CLOSES DIV FROM ABOVE -->
+</div>

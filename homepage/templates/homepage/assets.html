@@ -1,0 +1,83 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'homepage/style.css' %}" /> 
+ 
+<head>
+<title>ITILITY</title>
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+
+<div class="header-color-block">
+        
+    <a href="/homepage/"><img src="{% static 'homepage/images/ITILITY_LOGO.png' %}" /></a>
+    <br><br>
+    
+    <div class="header-menu-div">
+
+            &nbsp<a href="/homepage/"><img src="{% static 'homepage/images/ITILITY_LOGO_ARROW.png' %}" style="vertical-align:bottom; float:left" /></a>
+            <span class="header-menu-text">
+                <br><br><br><br>
+                <a class="header-menu-link" href="/homepage/assets">Assets</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="/homepage/locations">Locations</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="/homepage/manufacturers">Manufacturers</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="#">Admin</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+                <a class="header-menu-link" href="#">Contact Us</a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp
+            </span>
+
+    </div>
+</div>
+ 
+<div class="main-half-div">
+<!-- HEADER --> 
+
+
+    <div class="main-text">
+        <h2>Assets
+            <div class="float-right">
+                <a href="/homepage/new_asset">New Asset</a>
+            </div>
+        </h2>
+        
+
+        <table>
+            <thead>
+                <tr>
+                    <th>UID</th>
+                    <th>Org. Tag</th>
+                    <th>Man. Part #</th>
+                    <th>Description</th>
+                    <th>Maintenance Notes</th>
+                    <th>Date Implemented</th>
+                    <th>Location</th>
+                    <th>Manufacturer</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                {% for a in assets %}
+                    <tr>
+                        <td>{{ a.UID }}</td>
+                        <td>{{ a.organizationalTag }}</td>
+                        <td>{{ a.manufacturerPartNumber }}</td>
+                        <td>{{ a.description }}</td>
+                        <td>{{ a.maintenanceNotes }}</td>
+                        <td>{{ a.dateImplemented }}</td>
+                        <td>{{ a.currentAssignedLocation.name }}</td>
+                        <td>{{ a.manufacturer.name }}</td>
+                        <td><a href="/homepage/edit_asset/{{ a.UID }}">Edit</a></td>
+                        <td><a href="/homepage/delete_asset/{{ a.UID }}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+
+<!-- FOOTER (CLOSES DIV FROM ABOVE -->
+</div>

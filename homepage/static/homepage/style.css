@@ -1,0 +1,40 @@
+.header-color-block {
+    width: 100%;
+    height: 225px;
+    background-color: #4343e6;
+}
+
+.header-menu-text {
+    color: #a6a6ff;
+    float: right;
+}
+
+.float-right {
+    float: right;
+}
+
+.header-menu-div {
+    width: 100%;
+}
+
+.header-menu-link {
+    color: #a6a6ff;
+    text-decoration: none;
+    font-family: Century Gothic,arial,sans-serif;
+}
+
+.header-menu-link:hover,
+.header-menu-link:focus {
+    color: #b8b8ff;
+    text-decoration: none;
+    font-family: Century Gothic,arial,sans-serif;
+}
+
+.main-text {
+    font-family: Century Gothic,arial,sans-serif;
+}
+
+.main-half-div {
+    width: 900px;
+    margin: 0 auto;
+}
